@@ -5,8 +5,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin()
 
-import Item from './Item'
 import Navbar from './Navbar'
+import ItemsList from './ItemsList'
 
 class App extends Component {
   render() {
@@ -14,14 +14,8 @@ class App extends Component {
       <MuiThemeProvider>
         <div>
           <Navbar />
-          <div id="items">
-            {
-              Array(10).fill(0).map(x => {
-                return <Item/>
-              })
-            }
-          </div>
-        </div>  
+          <ItemsList /> 
+        </div> 
       </MuiThemeProvider>
     );
   }
