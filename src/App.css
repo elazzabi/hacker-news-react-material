@@ -1,5 +1,8 @@
 #items {
   width: 80vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
