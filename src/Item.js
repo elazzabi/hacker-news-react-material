@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Card, CardHeader} from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
+import { pink400 } from 'material-ui/styles/colors';
+
 
 class Item extends Component {
   render() {
@@ -8,7 +10,7 @@ class Item extends Component {
 
     return <Card style={{marginTop: "16px"}}>
       <CardHeader
-        avatar={<Avatar>{title[0]}</Avatar>}
+        avatar={<Avatar backgroundColor={pink400}>{title[0]}</Avatar>}
         title={title}
         subtitle={`by ${by} | ${score} points`}
         actAsExpander={true}
