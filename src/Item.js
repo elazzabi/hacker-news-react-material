@@ -18,6 +18,7 @@ class Item extends Component {
         title={title}
         subtitle={`by ${by} | ${score} points`}
         actAsExpander={true}
+        showExpandableButton={true}
         style={{display: "flex", alignItems:"center"}}
       />
       <CardActions expandable={true} style={{float: "right", display: "flex", alignItems: "center"}}>
