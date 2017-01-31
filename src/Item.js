@@ -8,7 +8,7 @@ import Comment from 'material-ui/svg-icons/communication/comment'
 
 class Item extends Component {
   render() {
-    let {by, title, score, url, kids} = this.props.data
+    let {by, title, score, url, kids, type} = this.props.data
 
     return <Card style={{marginTop: "16px"}}>
       <CardHeader
@@ -21,9 +21,10 @@ class Item extends Component {
         style={{display: "flex", alignItems:"center"}}
       />
       <CardActions expandable={true} style={{float: "right", display: "flex", alignItems: "center"}}>
-        <IconButton tooltip={kids.length + (kids.length <= 1 ? ' comment' : ' comments')}>
-          <Comment />
-        </IconButton>
+        {type === "story" ?
+          <IconButton tooltip={kids.length + (kids.length <= 1 ? ' comment' : ' comments')}>
+            <Comment />
+          </IconButton> : ""}
         <IconButton href={url} tooltip="Open link">
           <Link />
         </IconButton>
