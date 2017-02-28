@@ -22,7 +22,7 @@ class Item extends Component {
       />
       <CardActions expandable={true} style={{float: "right", display: "flex", alignItems: "center"}}>
         {type === "story" ?
-          <IconButton tooltip={kids.length + (kids.length <= 1 ? ' comment' : ' comments')}>
+          <IconButton tooltip={kids ? kids.length + (kids.length <= 1 ? ' comment' : ' comments') : 0}>
             <Comment />
           </IconButton> : ""}
         <IconButton href={url} tooltip="Open link">
