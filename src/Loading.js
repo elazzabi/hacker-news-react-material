@@ -1,5 +1,5 @@
-import React from 'react';
-import RefreshIndicator from 'material-ui/RefreshIndicator';
+import React from 'react'
+import RefreshIndicator from 'material-ui/RefreshIndicator'
 
 const style = {
   container: {
@@ -11,7 +11,7 @@ const style = {
     marginTop: '16px',
     alignSelf: 'center'
   },
-};
+}
 
 const Loading = () => (
   <RefreshIndicator
@@ -21,6 +21,6 @@ const Loading = () => (
     status="loading"
     style={style.refresh}
   />
-);
+)
 
-export default Loading;
+export default Loading

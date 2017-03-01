@@ -33,7 +33,7 @@ class ItemsList extends Component {
           {items.length !== 0 ? items.map(x => <Item data={x} key={x.id}/>) : <Loading />}
         </div>
       </HandleScroll>
-    );
+    )
   }
 }
 

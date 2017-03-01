@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import axios from 'axios'
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
 import Navbar from './Navbar'
@@ -50,8 +50,8 @@ class App extends Component {
           <ItemsList items={this.state.itemsToDisplay} loadMoreData={this.loadMoreData.bind(this)}/> 
         </div> 
       </MuiThemeProvider>
-    );
+    )
   }
 }
 
-export default App;
+export default App

@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Item from './Item';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Item from './Item'
 import { shallow } from 'enzyme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
 const data = JSON.parse(`{
@@ -19,6 +19,6 @@ const data = JSON.parse(`{
 }`)
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<MuiThemeProvider><Item data={data}/></MuiThemeProvider>, div);
-});
+  const div = document.createElement('div')
+  ReactDOM.render(<MuiThemeProvider><Item data={data}/></MuiThemeProvider>, div)
+})
