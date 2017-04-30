@@ -9,37 +9,31 @@ injectTapEventPlugin()
 import Navbar from './Navbar'
 import ItemsList from './ItemsList'
 
-const url = 'https://hacker-news.firebaseio.com/v0/'
+const url = "https://hacker-news-express-hhhkjgpiwi.now.sh/page/"
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      itemsToDisplay: [],
-      allItems: [],
-      page: 0
+      items: [],
+      page: 1
     }
   }
 
-  loadMoreData() {
+  loadPage() {
     let component = this
-    let page = this.state.page
-    let maxItems = this.state.allItems.slice(10 * page, 9 + 10 * page)
 
-    axios.all(maxItems.map(item => axios.get(url + '/item/' + item + '.json'))).then(axios.spread(function(...args) {
+    axios.get(url + this.state.page).then(res => {
       component.setState({
-        itemsToDisplay: component.state.itemsToDisplay.concat(args.map(x => x.data)), 
-        page: component.state.page + 1})
-    }))
+        items: this.state.items.concat(res.data),
+        page: this.state.page + 1
+      })
+    })
 
   }
 
   componentDidMount() {
-    let component = this
-    axios.get(url + "topstories.json").then(response => {
-      component.state.allItems = response.data
-      component.loadMoreData()
-    })
+    this.loadPage()
   }
 
   render() {
@@ -47,7 +41,7 @@ class App extends Component {
       <MuiThemeProvider>
         <div>
           <Navbar />
-          <ItemsList items={this.state.itemsToDisplay} loadMoreData={this.loadMoreData.bind(this)}/> 
+          <ItemsList items={this.state.items} loadMoreData={this.loadPage.bind(this)}/> 
         </div> 
       </MuiThemeProvider>
     )
